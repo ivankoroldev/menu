@@ -1,5 +1,4 @@
 import useMaraphonesQuery from "../../../hooks/useMaraphonesQuery";
-import {useState} from "react";
 import MaraphoneItem from "../maraphoneItem/MaraphoneItem.tsx";
 
 const MaraphoneList = () => {

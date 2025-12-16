@@ -1,4 +1,5 @@
 import {useNavigate} from "react-router";
+import type {DayPlan} from "../../../models/days.ts";
 
 interface DayListItemProps {
     item: DayPlan

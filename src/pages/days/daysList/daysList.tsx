@@ -1,7 +1,7 @@
 import useMaraphoneDaysQuery from "../../../hooks/useMaraphoneDaysQuery";
-import {useEffect, useState} from "react";
 import {useParams} from "react-router";
 import DayListItem from "../dayListItem/DayListItem.tsx";
+import type {DayPlan} from "../../../models/days.ts";
 
 const DaysList = () => {
     let params = useParams();
@@ -14,7 +14,7 @@ const DaysList = () => {
             { !isPending && (
                 <div className="days-list">
                     {
-                        daysData?.data?.map(day => <DayListItem key={day.day} item={day} />)
+                        daysData?.data?.map((day: DayPlan) => <DayListItem key={day.day} item={day} />)
                     }
                 </div>
             )}

@@ -1,6 +1,6 @@
 import {useParams} from "react-router";
 import useDayQuery from "../../../hooks/useDayQuery.tsx";
-import {useEffect} from "react";
+import type {MealItem} from "../../../models/days.ts";
 
 const DayDetails = () => {
     let {menuId, dayId} = useParams();
@@ -16,7 +16,7 @@ const DayDetails = () => {
                         {Object.values(daysData[0].meals).map((item,index) => {
                             return <div key={index} className="meal">
                                 <h4>{item.name}</h4>
-                                { item.items.map((ingredient, index) => {
+                                { item.items.map(({ingredient, index}: {ingredient: MealItem, index: number}) => {
                                     return <div key={index} className="ingredient">
                                         <span>{ingredient.dish}</span>
                                         {ingredient.amount && <strong> - {ingredient.amount}</strong>}
